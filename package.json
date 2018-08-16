@@ -1,0 +1,23 @@
+{
+  "name": "clase1",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelodosko/clases.git"
+  },
+  "author": "Marcelo Dosko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcelodosko/clases/issues"
+  },
+  "homepage": "https://github.com/marcelodosko/clases#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
