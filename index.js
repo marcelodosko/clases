@@ -3,6 +3,7 @@ var request = require('request')
 var parser = require('ua-parser-js')
 var config = './env'
 const port = config.PORT
+var app = express();
 
 // app.get('/', function (req, res) {
 //   var ua = parser(req.headers['user-agent']);
