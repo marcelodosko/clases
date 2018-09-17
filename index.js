@@ -1,7 +1,8 @@
 var express = require('express')
 var request = require('request')
 var parser = require('ua-parser-js')
-var app = express();
+var config = './env'
+const port = config.PORT
 
 // app.get('/', function (req, res) {
 //   var ua = parser(req.headers['user-agent']);
@@ -17,6 +18,6 @@ app.get('/test', function (req, res) {
   var html = '<html><head></head><body><h1>TEST HEROKU</h1></body></html>'
   res.status(200).send(html)
 })
-app.listen(3004, function () {
+app.listen(port, function () {
   console.log('Server Dinamic listening on port 3004!')
 });
