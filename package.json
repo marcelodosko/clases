@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "node index.js",
     "start": "node ./dist",
-    "build": "rimraf dist/ && babel ./server --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
     "express": "^4.16.3",
     "request": "^2.88.0",
     "ua-parser-js": "^0.7.18"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
