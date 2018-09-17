@@ -12,6 +12,11 @@ app.get('/', function (req, res) {
     res.redirect("itms-apps://itunes.apple.com/us/app/hodl-real-time-cryptocurrency/id1253668876")
   }
 })
+
+app.get('/test', function (req, res) {
+  var html = '<html><head></head><body><h1>TEST HEROKU</h1></body></html>'
+  res.status(200).send(html)
+})
 app.listen(3004, function () {
   console.log('Server Dinamic listening on port 3004!')
 });
