@@ -1,17 +1,17 @@
 var express = require('express')
 var request = require('request')
-var moment = require('moment')
+var parser = require('ua-parser-js')
 var app = express();
 
 app.get('/test', function (req, res) {
-  var html = '<h1>test ' +moment().format('LTS') +'</h1>'
-  html += '<button id="press">Press</button>'
-  html += '<p id="p"> Texto relleno</p>'
-  html += '<script src="http://localhost:3003/static/libs/jquery.js"></script>'
-  html += '<script src="http://localhost:3003/static/test.js"></script>'
-  res.send(html)
+  var ua = parser(req.headers['user-agent']);
+  if (ua.os.name === 'Android') {
+   res.redirect("market://details?id=com.flashratings.hodl")
+  }
+  if (ua.os.name == 'iOS') {
+    res.redirect("itms-apps://itunes.apple.com/us/app/hodl-real-time-cryptocurrency/id1253668876")
+  }
 })
-
 app.listen(3004, function () {
   console.log('Server Dinamic listening on port 3004!')
 });
